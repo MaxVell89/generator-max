@@ -1,0 +1,42 @@
+{
+  "name": "generator-max",
+  "version": "1.3.2",
+  "description": "Cadesign scaffolding",
+  "homepage": "github.com/maxvell89/generator-max",
+  "author": {
+    "name": "Cadesign",
+    "email": "admin@cadesign.ru",
+    "url": "cadesign.ru"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "generator-max"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "lodash": "^4.17.11",
+    "mkdirp": "^0.5.1",
+    "string-length": "^1.0.1",
+    "update-notifier": "^1.0.2",
+    "yeoman-generator": "^2.0.5",
+    "yosay": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-exclude-gitignore": "^1.2.0",
+    "gulp-istanbul": "^1.1.3",
+    "gulp-mocha": "^7.0.1",
+    "gulp-nsp": "^3.0.1",
+    "gulp-plumber": "^1.2.1",
+    "yeoman-assert": "^2.2.1"
+  },
+  "repository": "maxvell89/generator-max",
+  "license": "MIT"
+}
