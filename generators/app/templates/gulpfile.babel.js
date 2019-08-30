@@ -12,8 +12,9 @@ gulp.task('pug', () => getTaskBuild('pug'));<% } %><% if (templates === 'html') 
 gulp.task('html', () => getTaskBuild('html'));<% } %><% if (css === 'sass') { %>
 gulp.task('sass', () => getTaskBuild('sass'));<% } %><% if (sprites.indexOf('svg') !== -1) { %>
 gulp.task('sprite:svg', () => getTaskBuild('sprite-svg'));<% } %><% if (svgo) { %>
-gulp.task('svgo', () => getTaskBuild('svgo'));<% } %>
-gulp.task('webpack', getTaskBuild('webpack'));
+gulp.task('svgo', () => getTaskBuild('svgo'));<% } %><% if (bundler === 'webpack') { %>
+gulp.task('webpack', getTaskBuild('webpack'));<% } %><% if (bundler === 'manually') { %>
+gulp.task('js', getTaskBuild('js'));<% } %>
 
 gulp.task('copy:watch', getTaskWatch('copy'));<% if (templates === 'nunjucks') { %>
 gulp.task('nunjucks:watch', getTaskWatch('nunjucks'));<% } %><% if (templates === 'pug') { %>
@@ -21,8 +22,9 @@ gulp.task('pug:watch', getTaskWatch('pug'));<% } %><% if (templates === 'html') 
 gulp.task('html:watch', getTaskWatch('html'));<% } %><% if (css === 'sass') { %>
 gulp.task('sass:watch', getTaskWatch('sass'));<% } %><% if (sprites.indexOf('svg') !== -1) { %>
 gulp.task('sprite:svg:watch', getTaskWatch('sprite-svg'));<% } %><% if (svgo) { %>
-gulp.task('svgo:watch', getTaskWatch('svgo'));<% } %>
-gulp.task('webpack:watch', getTaskWatch('webpack'));
+gulp.task('svgo:watch', getTaskWatch('svgo'));<% } %><% if (bundler === 'webpack') { %>
+gulp.task('webpack:watch', getTaskBuild('webpack'));<% } %><% if (bundler === 'manually') { %>
+gulp.task('js:watch', getTaskBuild('js'));<% } %>
 
 const setmodeProd = done => {
   config.setEnv('production');
@@ -46,8 +48,9 @@ gulp.task(
     'sass',<% } %><% if (templates === 'nunjucks') { %>
     'nunjucks',<% } %><% if (templates === 'pug') { %>
     'pug',<% } %><% if (templates === 'html') { %>
-    'html',<% } %>
-    'webpack',
+    'html',<% } %><% if (bundler === 'webpack') { %>
+    'webpack',<% } %><% if (bundler === 'manually') { %>
+    'js',<% } %>
     'copy'
   )
 );
@@ -62,8 +65,9 @@ gulp.task(
     'sass',<% } %><% if (templates === 'nunjucks') { %>
     'nunjucks',<% } %><% if (templates === 'pug') { %>
     'pug',<% } %><% if (templates === 'html') { %>
-    'html',<% } %>
-    'webpack',
+    'html',<% } %><% if (bundler === 'webpack') { %>
+    'webpack',<% } %><% if (bundler === 'manually') { %>
+    'js',<% } %>
     'copy'
   )
 );
@@ -76,8 +80,9 @@ gulp.task(
     'pug:watch',<% } %><% if (templates === 'html') { %>
     'html:watch',<% } %><% if (sprites.indexOf('svg') !== -1) { %>
     'sprite:svg:watch',<% } %><% if (svgo) { %>
-    'svgo:watch',<% } %>
-    'webpack:watch',<% if (css === 'sass') { %>
+    'svgo:watch',<% } %><% if (bundler === 'webpack') { %>
+    'webpack:watch',<% } %><% if (bundler === 'manually') { %>
+    'js:watch',<% } %><% if (css === 'sass') { %>
     'sass:watch'<% } %>
   )
 );

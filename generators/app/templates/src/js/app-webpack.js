@@ -1,3 +1,3 @@
-import sayHello from './lib/sayHello';
+import isTouch from "./lib/detectTouch";
 
-sayHello();
+console.log('Is touch device: ', isTouch());

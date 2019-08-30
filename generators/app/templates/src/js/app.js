@@ -4,4 +4,4 @@
 //=include lib/slick.min.js
 //=include lib/svgxuse.min.js
 
-sayHello();
+console.log('HELLO');

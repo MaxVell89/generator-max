@@ -1,0 +1,52 @@
+// colors
+$accent: #279ffb;
+$accent2: #2565c5;
+$accent3: #5ec604;
+$accent4: #493dae;
+$accent5: #f62020;
+$accent6: darken($accent3, 10%);
+
+$grey: #cccccc;
+$grey2: #4d4d4d;
+$grey3: #666;
+$grey4: #b3b3b3;
+$grey5: #808080;
+$grey6: #333;
+$grey7: #dadada;
+$grey8: #999;
+$grey9: #b4b4b4;
+$grey10: #c1c1c1;
+$grey11: #989898;
+$grey12: #ecf6fe;
+$grey13: #ccc;
+
+$textDark: $grey6;
+$error: $accent5;
+$linkColor: $accent2;
+
+// fonts
+$roboto: 'Roboto', sans-serif;
+$font: $roboto;
+
+// grid and responsive
+$contrainer: 1300px;
+$columns: 12;
+$offset: 20px;
+$offset_one_side: ($offset / 2);
+$fields: 20px; //если поля другой ширины
+
+$z-index: (
+    header: 310,
+    mobile-menu: 310,
+    count: 250,
+    main-social: 250,
+    main-page: 200,
+    main-slider: 5,
+);
+
+$break_xl: 1640px;
+$break_lg: 1320px;
+$break_md: 1023px;
+$break_sm: 767px;
+$break_xs: 575px;
+$break_xxs: 449px;

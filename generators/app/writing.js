@@ -22,7 +22,7 @@ module.exports = function () {
 
   // dotfiles
   this.fs.copy(this.templatePath('gitignore'), '.gitignore');
-  this.fs.copy(this.templatePath('editorconfig'), '.editorconfig');
+  //this.fs.copy(this.templatePath('editorconfig'), '.editorconfig');
   this.fs.copy(this.templatePath('eslintrc'), '.eslintrc');
   this.fs.copy(this.templatePath('eslintignore'), '.eslintignore');
   this.fs.copy(this.templatePath('htmlhintrc'), '.htmlhintrc');
@@ -170,7 +170,7 @@ module.exports = function () {
   if (props.css === 'sass') {
     // this.directory('src/sass', 'src/sass');
     this.fs.copy(this.templatePath('src/sass'), 'src/sass');
-    this.fs.copyTpl(this.templatePath('src/sass/app.sass'), 'src/sass/app.sass',props);
+    this.fs.copyTpl(this.templatePath('src/sass/style.scss'), 'src/sass/style.scss',props);
   } else{
     this.fs.copy(this.templatePath('src/postcss'), 'src/sass');
     this.fs.copyTpl(this.templatePath('src/sass/app.sss'), 'src/sass/app.sss',props);
@@ -181,8 +181,8 @@ module.exports = function () {
     case 'nunjucks':
       this.fs.copy(this.templatePath('src/templates-nunjucks'), 'src/templates');
       if(!props.preview){
-        this.fs.delete('src/templates/page.html');
-        this.fs.copy(this.templatePath('src/templates-nunjucks/page.html'), 'src/templates/index.html');
+        //this.fs.delete('src/templates/page.html');
+        this.fs.copy(this.templatePath('src/templates-nunjucks/index.html'), 'src/templates/index.html');
       }
       break;
     case 'pug':

@@ -1,3 +1,4 @@
+{% import "data/_data.html" as data %}
 {% import "partials/_mixins.html" as mixins %}
 <!doctype html>
 <html>
@@ -8,20 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#fff"/>
     <meta name="format-detection" content="telephone=no"/>
-    <link rel="stylesheet" media="all" href="css/app.css"/>
+    <link rel="stylesheet" media="all" href="css/style.css"/>
+    <script type="text/javascript" src="js/app.js"></script>
     {# {% include "../partials/_media-tags.html" %} #}
   </head>
   <body>
-
     <!-- BEGIN content -->
-    <div class="out">
-      {% block content %}{% endblock %}
+    <div class="body preload">
+      {# include "partials/_grid.html" #}
+      {% include "partials/_header.html" %}
+      <div class="main">
+        {% block content %}{% endblock %}
+      </div>
+      {% include "partials/_footer.html" %}
+      {% include "partials/_modals.html" %}
     </div>
     <!-- END content -->
-
-    <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/app.js"></script>
-    <!-- END scripts -->
-
   </body>
 </html>
