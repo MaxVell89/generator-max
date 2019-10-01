@@ -26,7 +26,7 @@ function createConfig(env) {
       publicPath: 'js/',
     },
     devtool: isProduction ?
-      '#source-map' :
+      false :
       '#cheap-module-eval-source-map',
     plugins: [
       // new webpack.optimize.CommonsChunkPlugin({
@@ -91,8 +91,8 @@ function createConfig(env) {
             path.resolve(__dirname, 'node_modules'),
           ],
         },
-        { test: /\.(glsl|frag|vert)$/, loader: 'raw-loader', exclude: /node_modules/ },
-        { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader', exclude: /node_modules/ }
+        //{ test: /\.(glsl|frag|vert)$/, loader: 'raw-loader', exclude: /node_modules/ },
+        //{ test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader', exclude: /node_modules/ }
         ],
     },
   };

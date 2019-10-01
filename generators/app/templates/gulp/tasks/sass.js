@@ -52,7 +52,7 @@ gulp.task('sass', () => gulp
 );
 
 const build = gulp => gulp.parallel('sass');
-const watch = gulp => () => gulp.watch(config.src.sass + '/**/*.{sass,scss}', gulp.parallel('sass'));
+const watch = gulp => () => gulp.watch(config.src.sass + '/**/*.{sass,scss}', { usePolling: true }, gulp.parallel('sass'));
 
 module.exports.build = build;
 module.exports.watch = watch;

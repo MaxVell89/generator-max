@@ -23,8 +23,8 @@ gulp.task('html:watch', getTaskWatch('html'));<% } %><% if (css === 'sass') { %>
 gulp.task('sass:watch', getTaskWatch('sass'));<% } %><% if (sprites.indexOf('svg') !== -1) { %>
 gulp.task('sprite:svg:watch', getTaskWatch('sprite-svg'));<% } %><% if (svgo) { %>
 gulp.task('svgo:watch', getTaskWatch('svgo'));<% } %><% if (bundler === 'webpack') { %>
-gulp.task('webpack:watch', getTaskBuild('webpack'));<% } %><% if (bundler === 'manually') { %>
-gulp.task('js:watch', getTaskBuild('js'));<% } %>
+gulp.task('webpack:watch', getTaskWatch('webpack'));<% } %><% if (bundler === 'manually') { %>
+gulp.task('js:watch', getTaskWatch('js'));<% } %>
 
 const setmodeProd = done => {
   config.setEnv('production');

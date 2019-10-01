@@ -1,47 +1,29 @@
 // colors
-$accent: #279ffb;
-$accent2: #2565c5;
-$accent3: #5ec604;
-$accent4: #493dae;
-$accent5: #f62020;
-$accent6: darken($accent3, 10%);
+$accent: #69b13d;
+$accent2: darken($accent, 10%);
+$accent3: #d01515;
 
-$grey: #cccccc;
-$grey2: #4d4d4d;
-$grey3: #666;
-$grey4: #b3b3b3;
-$grey5: #808080;
-$grey6: #333;
-$grey7: #dadada;
-$grey8: #999;
-$grey9: #b4b4b4;
-$grey10: #c1c1c1;
-$grey11: #989898;
-$grey12: #ecf6fe;
-$grey13: #ccc;
+$grey: #1b1818;
+$grey2: #d3d9d7;
 
-$textDark: $grey6;
-$error: $accent5;
-$linkColor: $accent2;
+$textDark: $grey;
+$error: $accent3;
+$linkColor: $accent;
 
 // fonts
 $roboto: 'Roboto', sans-serif;
 $font: $roboto;
 
 // grid and responsive
-$contrainer: 1300px;
+$contrainer: 1170px;
 $columns: 12;
-$offset: 20px;
+$offset: 30px;
 $offset_one_side: ($offset / 2);
-$fields: 20px; //если поля другой ширины
+$fields: 20px;
 
 $z-index: (
-    header: 310,
-    mobile-menu: 310,
-    count: 250,
-    main-social: 250,
-    main-page: 200,
-    main-slider: 5,
+    header: 100,
+    modal: 300
 );
 
 $break_xl: 1640px;

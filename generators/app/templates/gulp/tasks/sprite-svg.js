@@ -19,16 +19,18 @@ gulp.task('sprite:svg', () => gulp
         $('[stroke]').removeAttr('stroke');
         let w,h,size;
         if($('svg').attr('height')){
-            w = $('svg').attr('width').replace(/\D/g,'');
-            h = $('svg').attr('height').replace(/\D/g,'');
+            // w = $('svg').attr('width').replace(/\D/g,'');
+            // h = $('svg').attr('height').replace(/\D/g,'');
+            w = $('svg').attr('width');
+            h = $('svg').attr('height');
         } else {
             size = $('svg').attr('viewbox').split(' ').splice(2);
             w = size[0];
             h = size[1];
-            $('svg').attr('width', parseInt(w));
-            $('svg').attr('height', parseInt(h));
+            $('svg').attr('width', parseFloat(w));
+            $('svg').attr('height', parseFloat(h));
         }
-        $('svg').attr('viewBox', '0 0 ' + parseInt(w) + ' ' + parseInt(h));
+        $('svg').attr('viewBox', '0 0 ' + parseFloat(w) + ' ' + parseFloat(h));
       },
       parserOptions: { xmlMode: true }
     })
