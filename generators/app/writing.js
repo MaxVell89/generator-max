@@ -146,25 +146,22 @@ module.exports = function () {
   // }
   
   // copy directories
-  // if (props.bundler === 'webpack') {
-    this.fs.copy(this.templatePath('src/js/app-webpack.js'), 'src/js/app.js');
-  // } else {
-  //   this.fs.copy(this.templatePath('src/js/app.js'), 'src/js/app.js');
-  //   this.fs.copy(this.templatePath('src/js/lib'), 'src/js/lib')
-
-  // }
-
   if (props.bundler === 'webpack') {
     this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
-    this.fs.copy(this.templatePath('src/js/lib/sayHello-webpack.js'), 'src/js/lib/sayHello.js');
-    this.fs.copy(this.templatePath('src/js/lib/detectTouch-webpack.js'), 'src/js/lib/detectTouch.js');
     this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
-  }
-  else {
+    // this.fs.copy(this.templatePath('src/js/lib/sayHello-webpack.js'), 'src/js/lib/sayHello.js');
+    this.fs.copy(this.templatePath('src/js/lib/detectTouch-webpack.js'), 'src/js/lib/detectTouch.js');
+    this.fs.copy(this.templatePath('src/js/app-webpack.js'), 'src/js/app.js');
+  } else {
     this.fs.copy(this.templatePath('gulp/tasks/js.js'), 'gulp/tasks/js.js');
-    this.fs.copy(this.templatePath('src/js/lib/sayHello.js'), 'src/js/lib/sayHello.js');
+    // this.fs.copy(this.templatePath('src/js/lib/sayHello.js'), 'src/js/lib/sayHello.js');
     this.fs.copy(this.templatePath('src/js/lib/detectTouch.js'), 'src/js/lib/detectTouch.js');
+    this.fs.copy(this.templatePath('src/js/lib/jquery.min.js'), 'src/js/lib/jquery.min.js');
+    this.fs.copy(this.templatePath('src/js/lib/slick.min.js'), 'src/js/lib/slick.min.js');
+    this.fs.copy(this.templatePath('src/js/lib/svgxuse.min.js'), 'src/js/lib/svgxuse.min.js');
+    this.fs.copy(this.templatePath('src/js/app.js'), 'src/js/app.js');
   }
+
   this.fs.copy(this.templatePath('babelrc'), '.babelrc');
 
   if (props.css === 'sass') {
