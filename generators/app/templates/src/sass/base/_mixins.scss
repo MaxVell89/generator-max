@@ -518,6 +518,12 @@
 	}
 }
 
+@mixin isIE() {
+	@media all and (-ms-high-contrast:none) {
+		@content;
+	}
+}
+
 @mixin r($width) {
 	@media screen and (max-width: $width) {
 		@content;
