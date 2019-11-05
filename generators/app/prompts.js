@@ -38,7 +38,7 @@ module.exports = [
   {
     type: 'list',
     name: 'css',
-    message: 'Choose CSS engine',
+    message: 'Выберите css препроцессор',
     choices: [
       {
         name: 'Sass + PostCSS',
@@ -92,6 +92,12 @@ module.exports = [
     type: 'confirm',
     name: 'svgo',
     message: 'Использовать SVGO для оптимизации svg?',
+    default: true
+  },
+  {
+    type: 'confirm',
+    name: 'webp',
+    message: 'Генерировать WebP картинки?',
     default: true
   },
   // {

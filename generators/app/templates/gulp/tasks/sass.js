@@ -42,6 +42,7 @@ gulp.task('sass', () => gulp
   .src(config.src.sass + '/*.{sass,scss}')
   .pipe(sourcemaps.init())
   .pipe(sass({
+      includePaths: ['node_modules'],
       outputStyle: config.production ? 'compact' : 'expanded', // nested, expanded, compact, compressed
       precision: 5
   }))

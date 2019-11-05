@@ -85,10 +85,14 @@ module.exports = function () {
     this.fs.copy(this.templatePath('gulp/tasks/imagemin.js'),'gulp/tasks/imagemin.js');
   }
 
-  this.fs.copy(this.templatePath('gulp/tasks/svgo.js'),'gulp/tasks/svgo.js');
   if (props.svgo) {
+    this.fs.copy(this.templatePath('gulp/tasks/svgo.js'),'gulp/tasks/svgo.js');
     this.fs.copy(this.templatePath('src/img/svgo/facebook.svg'),'src/img/svgo/facebook.svg');
     this.fs.copy(this.templatePath('src/img/svgo'), 'src/img/svgo');
+  }
+
+  if (props.webp) {
+    this.fs.copy(this.templatePath('gulp/tasks/webp.js'),'gulp/tasks/webp.js');
   }
 
   if (props.sprites.length) {
