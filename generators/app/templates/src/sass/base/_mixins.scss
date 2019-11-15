@@ -395,6 +395,17 @@
 	}
 }
 
+@mixin exp-area($value: 10px) {
+	content: '';
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	top: -$value;
+	bottom: -$value;
+	left: -$value;
+	right: -$value;
+}
+
 // Z-INDEX
 @function z-index($key) {
 	@return map-get($z-index, $key);
