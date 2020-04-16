@@ -1,9 +1,9 @@
 // colors
-$accent: #69b13d;
+$accent: #cc3636;
 $accent2: darken($accent, 10%);
 $accent3: #d01515;
 
-$grey: #1b1818;
+$grey: #333333;
 $grey2: #d3d9d7;
 
 $textDark: $grey;
@@ -11,19 +11,19 @@ $error: $accent3;
 $linkColor: $accent;
 
 // fonts
-$roboto: 'Roboto', sans-serif;
-$font: $roboto;
+$lato: 'Lato', sans-serif;
+$font: $lato;
 
 // grid and responsive
-$contrainer: 1170px;
+$container: 1770px;
 $columns: 12;
-$offset: 30px;
-$offset_one_side: ($offset / 2);
-$fields: 20px;
+$gap: 30px;
+$halfGap: ($gap / 2);
+$fields: 75px;
 
 $z-index: (
-    header: 100,
-    modal: 300
+        header: 100,
+        modal: 300
 );
 
 $break_xl: 1640px;
@@ -32,3 +32,7 @@ $break_md: 1023px;
 $break_sm: 767px;
 $break_xs: 575px;
 $break_xxs: 449px;
+
+$shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+
+$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);

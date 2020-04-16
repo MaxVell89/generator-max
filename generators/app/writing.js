@@ -96,9 +96,7 @@ module.exports = function () {
   }
 
   if (props.sprites.length) {
-    this.fs.copy(this.templatePath('src/icons/facebook.png'), 'src/icons/facebook.png');
-    this.fs.copy(this.templatePath('src/icons/facebook.svg'), 'src/icons/facebook.svg');
-    this.fs.copy(this.templatePath('src/icons/facebook@2x.png'), 'src/icons/facebook@2x.png');
+    this.fs.copy(this.templatePath('src/icons/facebook.svg'), 'src/icons/cadesign.svg');
   }
 
   // iconfont task
@@ -153,16 +151,16 @@ module.exports = function () {
   if (props.bundler === 'webpack') {
     this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
     this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
-    // this.fs.copy(this.templatePath('src/js/lib/sayHello-webpack.js'), 'src/js/lib/sayHello.js');
-    this.fs.copy(this.templatePath('src/js/lib/detectTouch-webpack.js'), 'src/js/lib/detectTouch.js');
+    // this.fs.copy(this.templatePath('src/js/libs/sayHello-webpack.js'), 'src/js/libs/sayHello.js');
+    this.fs.copy(this.templatePath('src/js/libs/detectTouch-webpack.js'), 'src/js/libs/detectTouch.js');
     this.fs.copy(this.templatePath('src/js/app-webpack.js'), 'src/js/app.js');
   } else {
     this.fs.copy(this.templatePath('gulp/tasks/js.js'), 'gulp/tasks/js.js');
-    // this.fs.copy(this.templatePath('src/js/lib/sayHello.js'), 'src/js/lib/sayHello.js');
-    this.fs.copy(this.templatePath('src/js/lib/detectTouch.js'), 'src/js/lib/detectTouch.js');
-    this.fs.copy(this.templatePath('src/js/lib/jquery.min.js'), 'src/js/lib/jquery.min.js');
-    this.fs.copy(this.templatePath('src/js/lib/slick.min.js'), 'src/js/lib/slick.min.js');
-    this.fs.copy(this.templatePath('src/js/lib/svgxuse.min.js'), 'src/js/lib/svgxuse.min.js');
+    // this.fs.copy(this.templatePath('src/js/libs/sayHello.js'), 'src/js/libs/sayHello.js');
+    this.fs.copy(this.templatePath('src/js/libs/detectTouch.js'), 'src/js/libs/detectTouch.js');
+    this.fs.copy(this.templatePath('src/js/libs/jquery.min.js'), 'src/js/libs/jquery.min.js');
+    this.fs.copy(this.templatePath('src/js/libs/slick.min.js'), 'src/js/libs/slick.min.js');
+    this.fs.copy(this.templatePath('src/js/libs/svgxuse.min.js'), 'src/js/libs/svgxuse.min.js');
     this.fs.copy(this.templatePath('src/js/app.js'), 'src/js/app.js');
   }
 
@@ -183,7 +181,7 @@ module.exports = function () {
       this.fs.copy(this.templatePath('src/templates-nunjucks'), 'src/templates');
       if(!props.preview){
         //this.fs.delete('src/templates/page.html');
-        this.fs.copy(this.templatePath('src/templates-nunjucks/index.html'), 'src/templates/index.html');
+        this.fs.copy(this.templatePath('src/templates-nunjucks/index.twig'), 'src/templates/index.twig');
       }
       break;
     case 'pug':

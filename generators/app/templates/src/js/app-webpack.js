@@ -1,3 +1,3 @@
-import isTouch from "./lib/detectTouch";
+import isTouch from "./libs/detectTouch";
 
 console.log('Is touch device: ', isTouch());
