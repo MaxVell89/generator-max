@@ -427,8 +427,12 @@
 	@include row-offset();
 }
 
-@function p($num, $cols) {
-	@return percentage($num/$cols);
+@function p($num, $cols, $offset: 0) {
+	@if $offset != 0 {
+		@return calc(#{percentage($num/$cols)} + #{$offset});
+	} @else {
+		@return percentage($num/$cols);
+	}
 }
 
 @function pMinus($num, $cols, $gap: $gap) {
