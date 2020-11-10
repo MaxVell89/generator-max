@@ -35,7 +35,7 @@ module.exports = function () {
   // gulp configs
   this.fs.copy(this.templatePath('gulp/config.js'),'gulp/config.js');
   this.fs.copy(this.templatePath('gulp/util/handle-errors.js'),'gulp/util/handle-errors.js');
-  
+
   // common tasks
   // this.fs.copyTpl(this.templatePath('gulp/tasks/default.js'),'gulp/tasks/default.js');
   // this.fs.copyTpl(this.templatePath('gulp/tasks/build.js'),'gulp/tasks/build.js', props);
@@ -44,7 +44,7 @@ module.exports = function () {
   this.fs.copyTpl(this.templatePath('gulp/tasks/copy.js'),'gulp/tasks/copy.js', props);
   this.fs.copy(this.templatePath('gulp/tasks/clean.js'),'gulp/tasks/clean.js');
   this.fs.copy(this.templatePath('gulp/tasks/server.js'),'gulp/tasks/server.js');
-  
+
   // if(props.preview){
   //   this.fs.copy(this.templatePath('gulp/tasks/index/index.html'),'gulp/tasks/index/index.html');
   //   this.fs.copy(this.templatePath('gulp/tasks/list-pages.js'),'gulp/tasks/list-pages.js');
@@ -127,7 +127,7 @@ module.exports = function () {
         this.fs.copy(this.templatePath('gulp/tasks/sprite-svg/_sprite-svg.sss'),'gulp/tasks/sprite-svg/_sprite-svg.sss');
         break;
     }
-  
+
 
   // png sprites task
   if (props.sprites.indexOf('png') !== -1) {
@@ -146,14 +146,16 @@ module.exports = function () {
   // if(props.preview){
   //   this.fs.copyTpl(this.templatePath('src/index.yaml'),'src/index.yaml', props);
   // }
-  
+
   // copy directories
   if (props.bundler === 'webpack') {
     this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
     this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
     // this.fs.copy(this.templatePath('src/js/libs/sayHello-webpack.js'), 'src/js/libs/sayHello.js');
     this.fs.copy(this.templatePath('src/js/libs/detectTouch-webpack.js'), 'src/js/libs/detectTouch.js');
+    this.fs.copy(this.templatePath('src/js/modules/jquery-init.js'), 'src/js/modules/jquery-init.js');
     this.fs.copy(this.templatePath('src/js/app-webpack.js'), 'src/js/app.js');
+    this.fs.copy(this.templatePath('src/js/helper-menu.js'), 'src/js/helper-menu.js');
   } else {
     this.fs.copy(this.templatePath('gulp/tasks/js.js'), 'gulp/tasks/js.js');
     // this.fs.copy(this.templatePath('src/js/libs/sayHello.js'), 'src/js/libs/sayHello.js');
@@ -162,6 +164,7 @@ module.exports = function () {
     this.fs.copy(this.templatePath('src/js/libs/slick.min.js'), 'src/js/libs/slick.min.js');
     this.fs.copy(this.templatePath('src/js/libs/svgxuse.min.js'), 'src/js/libs/svgxuse.min.js');
     this.fs.copy(this.templatePath('src/js/app.js'), 'src/js/app.js');
+    this.fs.copy(this.templatePath('src/js/helper-menu.js'), 'src/js/helper-menu.js');
   }
 
   this.fs.copy(this.templatePath('babelrc'), '.babelrc');
