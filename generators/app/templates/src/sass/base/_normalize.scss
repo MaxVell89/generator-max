@@ -12,7 +12,7 @@ html {
 	touch-action: manipulation;
 	-ms-overflow-style: scrollbar;
 	box-sizing: border-box;
-	font-size: 10px; /* Для svg */
+	font-size: 16px; /* Для svg */
 }
 
 *,
@@ -21,8 +21,8 @@ html {
 	box-sizing: inherit;
 }
 
-ol[class],
-ul[class] {
+ol,
+ul {
 	list-style: none;
 }
 
@@ -54,29 +54,30 @@ select {
 	font-weight: inherit;
 	border-radius: 0;
 	box-shadow: none;
+	color: inherit;
 }
 
 // Chrome
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 // Firefox
 input[type="number"] {
-  -moz-appearance: textfield;
+	-moz-appearance: textfield;
 }
 input[type="number"]:hover,
 input[type="number"]:focus {
-  -moz-appearance: number-input;
+	-moz-appearance: number-input;
 }
 
 // other
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 a {

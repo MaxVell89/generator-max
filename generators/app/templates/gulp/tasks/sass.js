@@ -11,8 +11,8 @@ const isMax = mq => /max-width/.test(mq);
 const isMin = mq => /min-width/.test(mq);
 
 const sortMediaQueries = (a, b) => {
-    const A = a.replace(/\D/g, '');
-    const B = b.replace(/\D/g, '');
+    const A = a.replace(/\D/g, '') || 0;
+    const B = b.replace(/\D/g, '') || 0;
 
     if (isMax(a) && isMax(b)) {
         return B - A;
@@ -23,7 +23,7 @@ const sortMediaQueries = (a, b) => {
     } else if (isMin(a) && isMax(b)) {
         return -1;
     }
-    return 1;
+    return B - A;
 }
 
 const processors = [
